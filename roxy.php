@@ -93,35 +93,35 @@ function claim($token)
 		}
 	}
 
-// function claim2($token)
-// 	{
-// 	$data = '{"promo_code":"COBAINGOJEK"}';
-// 	$claim2 = request("/go-promotions/v1/promotions/enrollments", $token, $data);
-// 	if ($claim2['success'] == 1)
-// 		{
-// 		return $claim2['data']['message'];
-// 		}
-// 	  else
-// 		{
-//       save("error_log.txt", json_encode($claim2));
-// 		return false;
-// 		}
-// 	}
+function claim2($token)
+	{
+	$data = '{"promo_code":"GOFOODNASGOR07"}';
+	$claim2 = request("/go-promotions/v1/promotions/enrollments", $token, $data);
+	if ($claim2['success'] == 1)
+		{
+		return $claim2['data']['message'];
+		}
+	  else
+		{
+      save("error_log.txt", json_encode($claim2));
+		return false;
+		}
+	}
 
-// function claim3($token)
-// 	{
-// 	$data = '{"promo_code":"SERIUSMAIN"}';
-// 	$claim3 = request("/go-promotions/v1/promotions/enrollments", $token, $data);
-// 	if ($claim3['success'] == 1)
-// 		{
-// 		return $claim3['data']['message'];
-// 		}
-// 	  else
-// 		{
-//       save("error_log.txt", json_encode($claim3));
-// 		return false;
-// 		}
-// 	}
+function claim3($token)
+	{
+	$data = '{"promo_code":"SERIUSMAIN"}';
+	$claim3 = request("/go-promotions/v1/promotions/enrollments", $token, $data);
+	if ($claim3['success'] == 1)
+		{
+		return $claim3['data']['message'];
+		}
+	  else
+		{
+      save("error_log.txt", json_encode($claim3));
+		return false;
+		}
+	}
 
 $banner = "
 =========================================
@@ -173,9 +173,8 @@ if ($register == false)
 		echo Console::light_green("> Pendaftaran Akun Berhasil");
 		echo "\n";
 
-		// CLAIM VOUCHER GO-FOOD
-		sleep(2);
-		echo "> Sedang Claim Voucher Go-Ride\n";
+		// CLAIM VOUCHER PERTAMA
+		echo "> Sedang Claim Voucher Go-Ride Pertama\n";
 		$claim = claim($verif);
 		if ($claim == false)
 			{
@@ -188,57 +187,54 @@ if ($register == false)
 			echo Console::light_green("> Berhasil Claim Voucher Go-Ride\n");
 			sleep(1);
 			echo $claim . "\n\n";
-
-			// CLAIM VOUCHER GO-RIDE
-		// 	sleep(1);
-		// 	echo "> Mencoba Claim Voucher Ke-2...\n";
-		// 	sleep(2);
-		// 	echo "> Mohon Tunggu Sebentar...\n\n";
-
-		// 	sleep(5);
-		// 	echo "> Sedang Claim Voucher Go-Ride...\n";
-		// 	$claim2 = claim2($verif);
-		// if ($claim2 == false)
-		// 	{
-		// 	sleep(3);
-		// 	echo Console::red("> Gagal Claim Voucher\n");
-		// 	}
-		//   else
-		// 	{
-		// 	sleep(3);
-		// 	echo Console::light_green("> Berhasil Claim Voucher Go-Ride \n");
-		// 	sleep(1);
-		// 	echo $claim . "\n\n";
-
-		// 	// CLAIM VOUCHER CB 100%
-		// 	sleep(1);
-		// 	echo "> Mencoba Claim Voucher Ke-3...\n";
-		// 	sleep(2);
-		// 	echo "> Mohon Tunggu Sebentar...\n\n";
-
-		// 	sleep(5);
-		// 	echo "> Sedang Claim Voucher CB 100%...\n";
-		// 	$claim3 = claim3($verif);
-		// if ($claim3 == false)
-		// 	{
-		// 	sleep(3);
-		// 	echo Console::red("> Gagal Claim Voucher\n");
-		// 	}
-		//   else
-		// 	{
-		// 	sleep(3);
-		// 	echo Console::light_green("> Berhasil Claim Voucher CB 100% \n");
-		// 	sleep(1);
-		// 	echo $claim . "\n\n";
-
-			sleep(1);
-			echo Console::light_green("        Happy Nuyul ^_^\n");
 		}
+
+
+			// CLAIM VOUCHER KEDUA
+		sleep(1);
+		echo "> Mencoba Claim Voucher Ke-2...\n";
+		sleep(2);
+		echo "> Mohon Tunggu Sebentar...\n\n";
+
+		sleep(5);
+		echo "> Sedang Claim Voucher Go-Food...\n";
+		$claim2 = claim2($verif);
+			if ($claim2 == false){
+				sleep(3);
+				echo Console::red("> Gagal Claim Voucher\n");
+			}
+		  	else
+			{
+				sleep(3);
+				echo Console::light_green("> Berhasil Claim Voucher Go-Ride \n");
+				sleep(1);
+				echo $claim . "\n\n";
 			}
 
-	}
+		 	// CLAIM VOUCHER KETIGA
+		sleep(1);
+		echo "> Mencoba Claim Voucher Ke-3...\n";
+		sleep(2);
+		echo "> Mohon Tunggu Sebentar...\n\n";
 
-}else if($type == 2){
+		sleep(5);
+		echo "> Sedang Claim Voucher CB 100%...\n";
+		$claim3 = claim3($verif);
+			if ($claim3 == false){
+				sleep(3);
+				echo Console::red("> Gagal Claim Voucher\n");
+			}
+		  	else
+			{
+				sleep(3);
+				echo Console::light_green("> Berhasil Claim Voucher CB 100% \n");
+				sleep(1);
+				echo $claim . "\n\n";
+			}
+		}
+	}
+}
+else if($type == 2){
 echo "\n";
 echo Console::blue("          Kamu Memilih Login\n");
 echo "========================================\n";
