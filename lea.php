@@ -18,7 +18,7 @@ function nama()
 function register($no)
 	{
 	$nama = nama();
-	$nama1 = "Djayeng";
+	$nama1 = "Lea";
 	$email = str_replace(" ", "", $nama) . mt_rand(100, 999);
 	$data = '{"name":"' . $nama1 . '","email":"' . $email . '@gmail.com","phone":"+' . $no . '","signed_up_country":"ID"}';
 	$register = request("/v5/customers", "", $data);
