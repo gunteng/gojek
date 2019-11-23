@@ -110,7 +110,7 @@ function claim2($token)
 
 function claim3($token)
 	{
-	$data = '{"promo_code":"GOFOODBOBA07"}';
+	$data = '{"promo_code":"GOFOODSANTAI19"}';
 	$claim3 = request("/go-promotions/v1/promotions/enrollments", $token, $data);
 	if ($claim3['success'] == 1)
 		{
@@ -238,27 +238,27 @@ if ($register == false)
 				echo Console::light_green("[+] Berhasil Claim Voucher Go-Food 20K \n");
 			}
 
-			sleep(5);
-		$claim4 = claim4($verif);
-			if ($claim4 == false)
-			{
-				echo Console::red("[-] Gagal Claim Voucher Go-Food 15K\n");
-			}
-		  	else
-			{
-				echo Console::light_green("[+] Berhasil Claim Voucher Go-Food 15K \n");
-			}
+		// 	sleep(5);
+		// $claim4 = claim4($verif);
+		// 	if ($claim4 == false)
+		// 	{
+		// 		echo Console::red("[-] Gagal Claim Voucher Go-Food 15K\n");
+		// 	}
+		//   	else
+		// 	{
+		// 		echo Console::light_green("[+] Berhasil Claim Voucher Go-Food 15K \n");
+		// 	}
 
-			sleep(5);
-		$claim5 = claim5($verif);
-			if ($claim5 == false)
-			{
-				echo Console::red("[-] Gagal Claim Voucher Go-Food 10K\n");
-			}
-		  	else
-			{
-				echo Console::light_green("[+] Berhasil Claim Voucher Go-Food 10K \n");
-			}
+		// 	sleep(5);
+		// $claim5 = claim5($verif);
+		// 	if ($claim5 == false)
+		// 	{
+		// 		echo Console::red("[-] Gagal Claim Voucher Go-Food 10K\n");
+		// 	}
+		//   	else
+		// 	{
+		// 		echo Console::light_green("[+] Berhasil Claim Voucher Go-Food 10K \n");
+		// 	}
 		}
 	}
 }
@@ -289,78 +289,73 @@ if ($login == false)
 	if ($verif == false)
 		{
 		sleep(1);
-		echo Console::red("> Gagal Login dengan nomer kmu!\n");
+		echo Console::red("[-] Gagal Login dengan nomer kmu!\n");
 		}
 	  else
 		{
 		echo "\n";
 		sleep(1);
-		echo Console::light_green("> Login Berhasil");
+		echo Console::light_green("[+] Login Berhasil");
 		echo "\n";
 
 		// CLAIM VOC GO-FOOD
-		sleep(2);
-		echo "> Sedang Claim Voucher Go-Food...\n";
+		sleep(5);
+
+		// CLAIM VOUCHER PERTAMA
 		$claim = claim($verif);
 		if ($claim == false)
 			{
-			sleep(3);
-			echo Console::red("> Gagal Claim Voucher\n");
+			echo Console::red("[-] Gagal Claim Voucher Go-Ride 10K Pertama\n");
 			}
 		  else
 			{
-			sleep(3);
-			echo Console::light_green("> Berhasil Claim Voucher Go-Food\n");
-			sleep(1);
-			echo $claim . "\n\n";
+			echo Console::light_green("[+] Berhasil Claim Voucher Go-Ride 10K Pertama\n");
+		}
 
-			// CLAIM VOUCHER GO-RIDE
-			sleep(1);
-			echo "> Mencoba Claim Voucher Ke-2...\n";
-			sleep(2);
-			echo "> Mohon Tunggu Sebentar...\n\n";
-
-			sleep(5);
-			echo "> Sedang Claim Voucher Go-Ride...\n";
-			$claim2 = claim2($verif);
-		if ($claim2 == false)
+		sleep(5);
+		$claim2 = claim2($verif);
+			if ($claim2 == false)
 			{
-			sleep(3);
-			echo Console::red("> Gagal Claim Voucher\n");
+				echo Console::red("[-] Gagal Claim Voucher Go-Ride 10K Kedua\n");
 			}
-		  else
+		  	else
 			{
-			sleep(3);
-			echo Console::light_green("> Berhasil Claim Voucher Go-Ride \n");
-			sleep(1);
-			echo $claim . "\n\n";
-
-			// CLAIM VOUCHER CB 100%
-			sleep(1);
-			echo "> Mencoba Claim Voucher Ke-3...\n";
-			sleep(2);
-			echo "> Mohon Tunggu Sebentar...\n\n";
-
-			sleep(5);
-			echo "> Sedang Claim Voucher CB 100%...\n";
-			$claim3 = claim3($verif);
-		if ($claim3 == false)
-			{
-			sleep(3);
-			echo Console::red("> Gagal Claim Voucher\n");
+				echo Console::light_green("[+] Berhasil Claim Voucher Go-Ride 10K Kedua \n");
 			}
-		  else
-			{
-			sleep(3);
-			echo Console::light_green("> Berhasil Claim Voucher CB 100% \n");
-			sleep(1);
-			echo $claim . "\n\n";
 
-			sleep(1);
-			echo Console::light_green("        Happy Nuyul ^_^\n");
-					}
-				}
+		sleep(5);
+		$claim3 = claim3($verif);
+			if ($claim3 == false)
+			{
+				echo Console::red("[-] Gagal Claim Voucher Go-Food 20K\n");
 			}
+		  	else
+			{
+				echo Console::light_green("[+] Berhasil Claim Voucher Go-Food 20K \n");
+			}
+
+		// 	sleep(5);
+		// $claim4 = claim4($verif);
+		// 	if ($claim4 == false)
+		// 	{
+		// 		echo Console::red("[-] Gagal Claim Voucher Go-Food 15K\n");
+		// 	}
+		//   	else
+		// 	{
+		// 		echo Console::light_green("[+] Berhasil Claim Voucher Go-Food 15K \n");
+		// 	}
+
+		// 	sleep(5);
+		// $claim5 = claim5($verif);
+		// 	if ($claim5 == false)
+		// 	{
+		// 		echo Console::red("[-] Gagal Claim Voucher Go-Food 10K\n");
+		// 	}
+		//   	else
+		// 	{
+		// 		echo Console::light_green("[+] Berhasil Claim Voucher Go-Food 10K \n");
+		// 	}
+				
 		}
 	}
 }
